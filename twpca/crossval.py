@@ -5,9 +5,9 @@ import numpy as np
 import tensorflow as tf
 import itertools
 from tqdm import tqdm, trange
-from .model import TWPCA
-from .regularizers import curvature
-from .utils import stable_rank
+from model import TWPCA
+from regularizers import curvature
+from utils import stable_rank
 
 __all__ = ['cross_validate', 'hyperparam_search']
 

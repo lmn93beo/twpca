@@ -5,8 +5,8 @@ import tensorflow as tf
 from sklearn.decomposition import NMF, TruncatedSVD
 from tqdm import trange
 
-from . import utils, warp
-from .regularizers import curvature, l2
+import utils, warp
+from regularizers import curvature, l2
 
 
 class TWPCA(object):

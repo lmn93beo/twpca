@@ -263,7 +263,7 @@ class TWPCA(object):
 
         # different warp intializations
         if warps is not None:
-            # warps proved by user
+            # warps provided by user
             shift = warps[:, 0] - 1
             scale = np.ones(self.n_trials)
             dt = np.maximum(0, np.diff(warps, axis=1))  # enforce monotonic increasing warps
@@ -354,6 +354,8 @@ class TWPCA(object):
             data = tf.constant(np.atleast_3d(data), dtype=tf.float32)
         elif not isinstance(data, tf.Tensor):
             raise ValueError("X must be a numpy array or tensorflow tensor")
+		else:
+			raise ValueError("Unrecognized type")
 
         return self._sess.run(warp.warp(data, self._inv_warp))
 
